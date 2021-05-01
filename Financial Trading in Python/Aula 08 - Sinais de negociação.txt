@@ -1,0 +1,26 @@
+1. Sinais de negociação
+Bem vindo de volta! Neste capítulo, vamos aprender como construir e fazer backtest de estratégias de negociação mais sofisticadas.
+
+2. O que são sinais de negociação?
+Primeiro, vamos discutir os sinais de negociação. Os sinais de negociação são gatilhos para ativos financeiros comprados (comprados) ou vendidos (vendem) com base em critérios predeterminados. Eles podem ser construídos usando um indicador técnico, vários indicadores técnicos ou uma combinação de dados e indicadores de mercado. Os sinais de negociação são comumente usados ​​em negociações algorítmicas, onde as estratégias de negociação tomam decisões com base em regras quantitativas e removem a discrição humana.
+
+3. Um exemplo de sinal
+Aqui está um exemplo de um sinal simples. Ele é construído comparando o preço com sua média móvel simples de n períodos, ou SMA. Um sinal longo é acionado para comprar o ativo quando seu preço sobe acima do SMA, e sair da negociação longa quando seu preço cai abaixo do SMA.
+
+4. Como implementar sinais em bt
+Anteriormente, discutimos o processo de 4 etapas de definição e backtest de estratégias de negociação e, em particular, como a bt usa algos individuais como blocos de construção para lidar com a lógica de negociação. Existem duas maneiras principais de implementar sinais em estratégias bt. Uma maneira é usar algos SelectWhere para filtrar os níveis de preços para construir o sinal, sobre o qual aprenderemos mais nesta lição. Outra maneira é usar algos WeighTarget, sobre o qual aprenderemos mais tarde.
+
+5. Construa o sinal
+Vamos construir uma estratégia baseada em sinal com bt passo a passo usando o preço e o sinal baseado em SMA mencionado anteriormente como exemplo. Primeiro, precisamos obter os dados de preços e calcular o indicador de média móvel. Aqui, usamos bt dot get para baixar os dados de preços das ações diretamente online. Para calcular o SMA, podemos aplicar a média de ponto rolante e ponto aos dados de preço. Em alternativa, podemos usar a função SMA da biblioteca talib.
+
+6. Defina uma estratégia baseada em sinais
+Agora vamos aplicar o sinal à estratégia. Isso é tratado por algos SelectWhere. Leva o argumento price maior do que SMA, que essencialmente é um Boolean DataFrame contendo lógica de seleção. Se a condição for verdadeira, ou seja, o preço sobe acima do SMA, um sinal longo é acionado para entrar em posições longas do ativo. Existem algumas simplificações dessa estratégia que vale a pena observar. Primeiro, usaremos a estratégia para negociar um ativo ou uma ação por vez. Quando você está negociando várias ações ou ativos, é importante considerar suas correlações de preços para o dimensionamento de posição e alocação de ativos adequados. Isso está além do escopo deste curso. Outra simplificação que fazemos é assumir que não há derrapagem ou comissão na execução da negociação. A derrapagem é a diferença entre o preço esperado de uma negociação e o preço em que a negociação é executada, e geralmente ocorre quando há um desequilíbrio entre oferta e demanda. As comissões são taxas cobradas pelos corretores ao executar uma negociação. Estas são considerações práticas na negociação real, mas por enquanto vamos nos concentrar no básico.
+
+7. Faça um backtest da estratégia baseada em sinais
+Assim que tivermos a estratégia definida, vamos criar e executar um backtest e ver seu desempenho.
+
+8. Trace o resultado do backtest
+Por último, vamos plotar e revisar o resultado do backtest. O gráfico de linha mostra o quanto o saldo de capital inicial aumenta ao longo do tempo a partir de uma linha de base de 100. Observe que as áreas de linha plana indicam períodos em que não temos posições, portanto, o saldo da conta comercial não muda. No geral, a estratégia é lucrativa com base no backtest realizado nos dados históricos.
+
+9. Vamos praticar!
+É hora de praticar!

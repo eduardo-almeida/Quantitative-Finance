@@ -1,0 +1,29 @@
+1. Modelagem linear com dados financeiros
+Agora que temos recursos e metas, podemos ajustar nosso primeiro modelo de aprendizado de máquina - um modelo linear.
+
+2. Faça conjuntos de treinamento e teste
+Para aprendizado de máquina, geralmente dividimos nossos dados em conjuntos de treinamento e teste. Com os dados da série temporal, queremos dividir nosso treinamento e teste em blocos contínuos. Os dados de treinamento devem ser os dados mais antigos e os dados de teste devem ser os dados mais recentes. Ajustamos nosso modelo aos dados de treinamento e testamos os dados mais recentes para entender como nosso algoritmo funcionará em dados novos e não vistos. Não podemos usar train_test_split do sklearn porque ele embaralha aleatoriamente o trem e os dados de teste.
+
+3. Faça conjuntos de treinamento e teste
+Para modelos lineares, precisamos adicionar uma constante aos nossos recursos, o que adiciona uma coluna de uns para um termo de interceptação y. statsmodels tem add_constant () para isso. Em seguida, dividimos os dados em conjuntos de treinamento e teste. Primeiro, obtemos o índice que dividiremos usando a fração do conjunto de trens e o número de linhas em nossos dados. Obtemos o número de linhas da propriedade dot-shape e convertemos em um inteiro. Por fim, dividimos recursos e destinos em conjuntos de treinamento e teste usando a indexação do Python. Lembre-se de que a indexação Python vai [start: stop: step]. Aqui, começamos do início e vamos para train_size para o conjunto de dados de treinamento, em seguida, vamos de train_size para o final dos dados para o conjunto de teste.
+
+4. Modelagem linear
+Agora que temos nossos conjuntos de trem e teste, podemos ajustar um modelo linear. Primeiro criamos o modelo com a função OLS () a partir de modelos estatísticos, fornecendo a ele nossos train_targets e train_features. Em seguida, usamos o método de ajuste que retorna um objeto com os resultados do ajuste.
+
+5. Modelagem linear
+Imprimir o resumo dos resultados do ajuste renderá muitas informações.
+
+6. Modelagem linear
+Vemos o valor de R ao quadrado no canto superior direito e muitas outras métricas. Podemos comparar este valor com o R ao quadrado de outros modelos que experimentamos. Um R-quadrado de 1 significa um ajuste perfeito e, quanto menor o valor de R-quadrado, pior nosso ajuste. Também vemos os coeficientes para cada recurso sob a coluna de coeficiente próximo ao canto inferior esquerdo. Estas são as mudanças de destino para uma mudança de unidade no recurso. Um valor positivo significa que o alvo está aumentando conforme o recurso aumenta e vice-versa para um coeficiente negativo.
+
+7. valores p
+Os modelos lineares são um dos modelos de aprendizado de máquina mais simples e são fáceis de interpretar. Por exemplo, podemos usar os valores p ou a coluna P> t para entender quais variáveis ​​estão significativamente correlacionadas ao destino. Obtemos esses valores com results-dot-pvalues. Os valores p são o resultado de um teste t dos coeficientes. Este é um teste estatístico que verifica se os coeficientes são significativamente diferentes de 0. O valor p é a% de chance de que o coeficiente seja realmente 0. Normalmente dizemos que um valor p inferior a 0-ponto-05 significa que nosso coeficiente é significativamente diferente de 0 e, neste caso, parece que alguns de nossos coeficientes são significativos.
+
+8. Traçando os resultados
+Por último, vamos traçar nossos resultados. Uma maneira rápida de ver como nosso modelo está se saindo é plotar as previsões versus os valores reais. As previsões perfeitas geram uma linha reta, que é o que acontece quando traçamos os alvos verdadeiros contra eles próprios.
+
+9. Traçando os resultados
+No entanto, os modelos lineares são muito fracos, então provavelmente teremos uma nuvem de pontos como esta. Quando começamos a usar modelos mais avançados, como aumento de gradiente e redes neurais, nossas previsões devem melhorar.
+
+10. É hora de ajustar um modelo linear!
+Agora vamos criar nosso primeiro modelo de aprendizado de máquina com nossos dados!

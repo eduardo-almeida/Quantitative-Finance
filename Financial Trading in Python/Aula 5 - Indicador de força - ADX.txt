@@ -1,0 +1,17 @@
+1. Indicador de força: ADX
+Nesta lição, aprenderemos sobre um indicador de força de tendência popular chamado Índice de movimento direcional médio ou ADX.
+
+2. O que é ADX?
+ADX significa "Índice de movimento direcional médio". Foi desenvolvido por J. Welles Wilder, que elaborou o conceito em seu famoso livro "New Concepts in Technical Systems". Wilder criou ADX com a intenção de medir a força de uma tendência de forma objetiva. O ADX pode indicar se o preço de um ativo está em tendência ou apenas se movendo para os lados. No entanto, não indica a direção de uma tendência, que é de alta (preços em alta) ou de baixa (preços em queda). ADX oscila entre 0 e 100. Em geral, um ADX menor que 25 indica que o mercado está indo para o lado e não tem uma tendência clara. Um ADX acima de 25 indica que o mercado está tendendo, e um ADX acima de 50 sugere um mercado de tendência forte.
+
+3. Como o ADX é calculado?
+ADX é obtido usando cálculos longos e complicados. Simplificando, ADX é derivado de dois outros indicadores: mais DI e menos DI. O DI positivo, ou índice direcional positivo, quantifica a presença de uma tendência de alta; e o menos DI, ou menos o índice direcional, quantifica a presença de uma tendência de baixa. ADX é a média suavizada da diferença entre mais DI e menos DI. A entrada de cálculo para ADX inclui os preços de alta, baixa e fechamento de cada período.
+
+4. Implementando ADX em Python
+ADX pode ser implementado em Python chamando talib dot ADX e passando três tipos de dados de preço como entrada, o preço alto, baixo e preço de fechamento. Originalmente, Welles Wilder usava uma janela de lookback de 14 períodos para cálculos ADX, que se tornou o padrão da indústria. Você pode alterar o período padrão com o parâmetro timeperiod. Lembre-se de que quanto mais longa for a janela de lookback, menos sensível será o ADX às flutuações de preço. Em outras palavras, um ADX de 14 dias é mais sensível às mudanças de preço diárias do que um ADX de 21 dias. Às vezes, os traders mudam o período de lookback para se adequar a seus horizontes de tempo de negociação. Por exemplo, um operador de posição que mantém uma posição comercial por vários meses provavelmente usaria um período de lookback mais longo. Neste código de amostra, calculamos ADX e o salvamos em uma nova coluna DataFrame. Podemos usar cauda de ponto para verificar as últimas 5 linhas.
+
+5. Plotagem ADX
+Normalmente, um gráfico ADX é colocado horizontalmente sob um gráfico de preço, para que possamos observar as mudanças de preço e indicador juntos ao longo da mesma linha do tempo. Isso pode ser feito usando a função matplotlib subplots. Neste código de amostra, criamos um conjunto de subtramas, ax1 e ax2, para plotar o preço e ADX separadamente. Também podemos usar set underscore ylabel para rotular o eixo y de cada subplot para maior clareza. Observe no gráfico, o ADX começa a subir quando o preço está em uma tendência de alta constante. O ADX começa a cair quando a tendência de alta do preço está parando e o preço está se movendo para o lado.
+
+6. Vamos praticar!
+Impressionante! Agora vamos praticar!

@@ -1,0 +1,56 @@
+1. Redes Neurais
+Agora vamos cobrir as redes neurais e como usá-las em Python.
+
+2. Redes neurais
+O uso da rede neural cresceu rapidamente, devido ao poder de computação da GPU, melhorias de software e popularidade. Este gráfico mostra o crescimento exponencial do poder computacional da GPU ao longo do tempo.
+
+3. As redes neurais têm potencial
+As redes neurais são semelhantes a outros modelos que usamos; nós fornecemos recursos e metas para obter previsões. No entanto, as redes neurais têm potencial para superar outros modelos porque têm não linearidade, capturam interações de variáveis ​​e são altamente personalizáveis. As redes neurais foram inspiradas na funcionalidade do cérebro humano.
+
+4. Diagrama de rede neural
+Aqui está uma rede neural simples; cada linha é uma camada de neurônios. Cada neurônio se conecta a todos os neurônios na próxima camada, então essas são chamadas de camadas densas.
+
+5. Diagrama de rede neural
+Os neurônios, ou círculos, representam a matemática. Enviamos dados de entrada para os primeiros neurônios, multiplicamos por pesos e adicionamos um viés.
+
+6. Matemática da rede neural
+Representamos essas operações com matemática matricial, ou álgebra linear, que se parece com isto. É por isso que as GPUs podem ser usadas para acelerar os cálculos.
+
+7. Ativações de rede neural
+Cada camada possui uma ativação. Depois que os dados passaram pelas camadas, aplicamos uma função de ativação para adicionar não linearidade.
+
+8. ReLU
+Usaremos uma ativação comum, que é ReLU - unidades lineares retificadas. Isso é 0 para números negativos e linear para números positivos.
+
+9. Função de perda de rede neural
+Uma vez que temos previsões, usamos funções de perda para comparar nossas previsões e alvos. Para a regressão, frequentemente usamos o erro quadrático médio.
+
+10. Como as redes neurais aprendem
+As previsões são feitas passando os dados para a frente. No final da rede neural, temos um único nó que produz nossas previsões.
+
+11. Como as redes neurais aprendem
+Em seguida, usamos o erro de nossa função de perda e o passamos de volta pela rede. Isso atualiza pesos e tendências para que nossas previsões fiquem mais próximas da verdade e sejam chamadas de retropropagação. Envolve derivar as equações matemáticas de direção direta. A retropropagação ajuda as redes neurais a aprenderem com mais eficiência e é por isso que padronizar nossos dados é importante.
+
+12. Implementando uma rede neural com keras
+Usaremos a biblioteca keras com o back-end TensorFlow para implementar redes neurais. keras é uma API de alto nível que nos permite projetar redes neurais com código mínimo, mas permite muita personalização.
+
+13. Implementando uma rede neural com keras
+No keras, podemos usar a API sequencial ou funcional. Por enquanto, ficaremos com o sequencial porque é mais simples. Primeiro importamos a classe sequencial de keras-dot-models e a camada densa que usaremos.
+
+14. Implementando uma rede neural com keras
+Criamos o modelo com a classe Sequential (). Em seguida, adicionamos camadas usando a função dot-add (). Para a primeira camada, usamos 50 nós e especificamos input_dim como o número de recursos de nossa forma de recursos. Adicionamos outra camada com 10 nós e usamos ReLU para as ativações. Nossa última camada é um nó e é linear para regressão.
+
+15. Ajustando o modelo
+Para ajustar o modelo, nós o compilamos com um otimizador e função de perda. O otimizador afeta a rapidez com que a rede aprende. Usaremos adam porque geralmente funciona bem, embora existam muitos outros como RMSprop. A função de perda mse é o erro quadrático médio. Em seguida, ajustamos o modelo com recursos e metas e especificamos o número de épocas, que é o número de ciclos de treinamento.
+
+16. Examinando a perda
+Queremos olhar para a perda em comparação com as épocas após o treinamento para garantir que a perda tenha diminuído. Normalmente, também queremos dividir alguns dos dados de treinamento em um conjunto de validação para ter certeza de que não estamos usando overfitting, mas não vamos cobrir isso aqui.
+
+17. Verificando o desempenho
+Por fim, verificaremos o desempenho com R ao quadrado e representaremos as previsões em relação aos valores reais. Os modelos keras não têm uma função dot-score (), então usaremos o r2_score () do sklearn para calcular R-quadrado.
+
+18. Plotar o desempenho
+Traçar previsões versus valores reais é o mesmo que fizemos antes com matplotlib.
+
+19. Faça uma rede neural!
+Ok, você está pronto - vá fazer uma rede neural!

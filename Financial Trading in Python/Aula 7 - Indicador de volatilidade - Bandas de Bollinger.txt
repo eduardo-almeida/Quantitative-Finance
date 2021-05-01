@@ -1,0 +1,17 @@
+1. Indicador de volatilidade: Bandas de Bollinger
+Nesta lição, vamos aprender sobre um indicador de volatilidade muito popular: Bollinger Bands.
+
+2. O que são bandas de Bollinger?
+Bollinger Bands são desenvolvidos por John Bollinger, um famoso comerciante técnico que elaborou o conceito em seu livro "Bollinger on Bollinger Bands". As bandas de Bollinger são projetadas para medir a volatilidade dos preços, ou seja, os desvios dos preços em relação à média. As bandas de Bollinger são compostas por três linhas: uma banda do meio, que é uma linha de média móvel simples de n períodos, onde n é igual a 20 por padrão; e uma banda superior e inferior que são desenhados k desvios padrão acima e abaixo da banda média, onde k é igual a 2 por padrão. Os parâmetros n e k podem ser alterados. Os comerciantes podem escolher n e k para atender aos seus horizontes de tempo de negociação e necessidades de estratégia. Por exemplo, um trader pode escolher a média móvel de 10 períodos e 1 ponto 5 desvios padrão para uma estratégia de curto prazo,
+
+3. Implicações das bandas de Bollinger
+Uma vez que as bandas superior e inferior são calculadas com base nos desvios padrão do preço médio, elas se ajustam às oscilações de volatilidade do preço subjacente. Quanto mais largas as bandas de Bollinger, mais voláteis são os preços dos ativos. Além disso, as Bandas de Bollinger pretendem responder à pergunta: o preço é muito alto ou muito baixo em uma base relativa? Estatisticamente falando, se as bandas superior e inferior forem baseadas em 1 desvio padrão, elas conterão cerca de 68% dos movimentos de preço recentes. Da mesma forma, se as bandas forem baseadas em 2 desvios padrão, elas conterão cerca de 95% dos movimentos de preços recentes. Em outras palavras, o preço só sai das faixas superior ou inferior em 5% dos casos. Portanto, podemos dizer que o preço é relativamente caro quando está próximo da faixa superior e relativamente barato quando está próximo da faixa inferior.
+
+4. Implementação de bandas de Bollinger em Python
+As bandas de Bollinger podem ser implementadas em Python chamando talib dot BBANDS e passando a coluna DataFrame, neste caso, o preço de fechamento. Especifique o período de lookback com o parâmetro timeperiod, que é 20 por padrão. Além disso, use nbdevup e nbdevdn para especificar o número de desvios padrão da banda do meio para a banda superior e inferior, respectivamente, que é 2 por padrão. Ele produz três séries de saída, que são, respectivamente, a banda superior, a linha média móvel do meio e a banda inferior. Eles podem ser salvos em variáveis ​​separadas.
+
+5. Plotagem de bandas de Bollinger
+As bandas de Bollinger são comumente plotadas em cima do preço, como este código demonstra. Como podemos ver, as bandas de Bollinger se tornam mais largas quando o preço tem grandes oscilações para cima ou para baixo. Quando os dados de preços verdes se aproximam da banda vermelha superior ou inferior, eles tendem a se reverter temporariamente antes de continuar o movimento original para cima ou para baixo.
+
+6. Vamos praticar!
+Progresso incrível! Agora vamos praticar!

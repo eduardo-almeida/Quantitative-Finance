@@ -1,0 +1,24 @@
+Entendi!
+1. Negociação financeira com bt
+Nesta lição, aprenderemos sobre o pacote bt.
+
+2. O pacote bt
+O Bt fornece uma estrutura flexível para definir e fazer backtesting de estratégias de negociação em Python. Uma estratégia de negociação é um método de compra e venda de ativos financeiros com base em regras predefinidas. Para negociação técnica, as regras são geralmente baseadas em indicadores e sinais técnicos. O backtesting é uma forma de avaliar a eficácia de uma estratégia testando-a em dados históricos. O resultado do teste é avaliado para determinar como seria o desempenho se usado no passado e se seria viável para negociação posterior. Para importar o pacote bt, use import bt.
+
+3. O processo bt
+Existem quatro etapas para definir e fazer um backtest de uma estratégia com bt. Primeiro, obtemos dados históricos de preços dos ativos que vamos negociar. Em segundo lugar, definimos a estratégia. Em seguida, testamos a estratégia com os dados históricos e, finalmente, avaliamos o resultado.
+
+4. Obtenha os dados
+Primeiro, precisamos de alguns dados de preços. Uma maneira é carregar os dados contidos em um arquivo CSV. Com o bt, também podemos usar sua função get para buscar dados online diretamente. Por padrão, ele baixa os preços de "Fechamento ajustado" do Yahoo Finance por tickers. Um ticker é um identificador abreviado de uma ação de capital aberto, e o preço de "Fechamento ajustado" é ajustado para eventos como ações corporativas, como desdobramento de ações, dividendos, etc. Os preços de vários títulos podem ser baixados de uma só vez, especificando vários tickers em uma única string separada por vírgulas. Use "início" e "fim" para especificar a data de início e a data de término.
+
+5. Defina a estratégia
+Em seguida, definimos nossa estratégia com a estratégia bt dot. A "Estratégia" contém lógicas de negociação combinando vários "algos". Esse recurso exclusivo de bt nos permite criar estratégias facilmente misturando e combinando diferentes algoritmos, cada um dos quais age como uma pequena força-tarefa que executa uma operação específica. Em "Estratégia", primeiro atribuímos um nome. Em seguida, definimos uma lista de algos entre colchetes. O primeiro "algo" especifica quando executar negociações. Aqui especificamos uma regra simples para executar negociações todas as semanas usando "RunWeekly". Aprenderemos como adicionar uma lógica de negociação mais complexa em capítulos posteriores. O segundo "algo" especifica a quais dados a estratégia se aplicará, para simplificar, aplicamos a todos os dados usando "SelectAll". O terceiro "algo" especifica, no caso de vários ativos, quais pesos se aplicam a cada ativo. Aqui, "Pesar Igualmente" significa, por exemplo, se tivermos duas ações, sempre alocaremos montantes iguais de capital para cada ação. O último "algo" especifica que irá reequilibrar os pesos dos ativos de acordo com o que especificamos na etapa anterior. Agora temos uma estratégia que executará negociações semanais em uma carteira que detém várias ações. Ele venderá uma ação que subiu de preço e redistribuirá o lucro para comprar uma ação que caiu de preço, mantendo uma quantidade igual de participações em cada ação. especifica que irá reequilibrar os pesos dos ativos de acordo com o que especificamos na etapa anterior. Agora temos uma estratégia que executará negociações semanais em uma carteira que detém várias ações. Ele venderá uma ação que subiu de preço e redistribuirá o lucro para comprar uma ação que caiu de preço, mantendo uma quantidade igual de participações em cada ação. especifica que irá reequilibrar os pesos dos ativos de acordo com o que especificamos na etapa anterior. Agora temos uma estratégia que executará negociações semanais em uma carteira que detém várias ações. Ele venderá uma ação que subiu de preço e redistribuirá o lucro para comprar uma ação que caiu de preço, mantendo uma quantidade igual de participações em cada ação.
+
+6. Backtest
+Agora podemos realizar backtesting. Use "bt dot Backtest" para combinar os dados e a estratégia previamente definida e crie um "backtest". Chame "bt dot run" para executar o backtest e salvar o resultado.
+
+7. Avalie o resultado
+Podemos usar "plot plot" para traçar e revisar o resultado. O gráfico de linhas mostra se aplicarmos a estratégia de negociar ações do Google, Amazon e Tesla semanalmente, comprá-los e vendê-los para manter uma carteira de ações ponderada igual, nos seis meses de 2020 nosso portfólio aumentará de 100 para 180. Nada mal! Também podemos usar "obter transações de sublinhado" para imprimir os detalhes da transação. Exploraremos estatísticas de desempenho mais detalhadas posteriormente no curso.
+
+8. Vamos praticar!
+Vamos praticar!

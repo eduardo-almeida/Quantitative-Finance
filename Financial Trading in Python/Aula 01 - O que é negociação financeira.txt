@@ -1,0 +1,26 @@
+1. O que é negociação financeira
+Receber! Meu nome é Chelsea Yang e trabalho com finanças quantitativas. Neste curso, aprenderemos tudo sobre negociação financeira com Python.
+
+2. O conceito de negociação financeira
+A negociação financeira é a compra e venda de ativos financeiros, também chamados de títulos financeiros. As pessoas negociam uma variedade de instrumentos financeiros, incluindo ações: ações que representam a propriedade de empresas, títulos: instrumentos de dívida emitidos pelo governo ou corporações, forex ou mercado de câmbio de moedas estrangeiras, commodities como ouro, prata e petróleo e criptomoedas como Bitcoin.
+
+3. Por que as pessoas negociam
+As pessoas negociam para obter lucro, assumindo riscos calculados. Um negociante obtém lucro quando compra um título a um preço mais baixo e vende mais tarde a um preço mais alto, conhecido como operação longa. Por outro lado, eles podem vender um título (emprestado) a um preço mais alto e comprá-lo de volta a um preço mais baixo, conhecido como venda a descoberto. Os operadores institucionais, como fundos de hedge ou bancos de investimento, podem negociar para proteger riscos financeiros, fornecer liquidez ao mercado ou reequilibrar suas carteiras. Os comerciantes de varejo estão negociando principalmente por conta própria, às vezes como um lance lateral.
+
+4. Negociação vs. investimento
+A principal diferença entre negociar e investir é o horizonte de tempo. A negociação normalmente tem um período de manutenção mais curto, variando de dias a meses. Investir tem um horizonte de tempo mais longo, que pode ir até anos ou mesmo décadas. A negociação se concentra nas tendências de mercado de curto prazo e tenta lucrar com a volatilidade e as flutuações de preços. O investimento se concentra nos fundamentos do mercado, no ambiente macroeconômico e visa aproveitar as grandes tendências que podem durar anos. Finalmente, enquanto os investidores normalmente assumem posições compradas, os negociantes assumem posições compradas e vendidas a fim de lucrar com o movimento de alta e de baixa dos preços. Neste curso, vamos nos concentrar na análise técnica de negociação financeira. Geralmente, um trader técnico analisa padrões históricos de dados de negociação e implementa estratégias de negociação com base em indicadores, sinais,
+
+5. Dados de séries temporais financeiras
+Para transações financeiras, você trabalhará principalmente com dados de séries temporais de preços de títulos. Os dados de série temporal são uma sequência de pontos de dados indexados em ordem de tempo. Aqui, temos alguns dados históricos de preços do Bitcoin salvos em um arquivo CSV. Nós o carregamos como um DataFrame com a função "read underscore csv" do pandas, que foi importado como pd. Usamos "index underscore col" para especificar a coluna "Date" como o índice, e definimos "parse underscore date" como True para analisar o índice no formato DateTime. O método "head" exibe as 5 primeiras linhas dos dados. Os dados diários geralmente incluem abertura, fechamento e preços altos e baixos diários, bem como o volume.
+
+6. Traçar gráfico de linha de dados de série temporal
+Podemos plotar os dados da série temporal com a função "plot", usando a função "matplotlib show" para exibir o gráfico. O gráfico de linha resultante nos fornece informações sobre os padrões de preços anteriores.
+
+7. Gráfico de velas
+Também podemos visualizar o movimento do preço usando um gráfico de velas. Cada vela mostra informações de preço para um período, por exemplo, um dia. Dentro de cada vela podemos ver: aberta e fechada no corpo da vela e alta e baixa no pavio da vela. Normalmente, um candle branco ou verde representa o preço de fechamento acima do preço de abertura e um candle preto ou vermelho representa o preço de fechamento abaixo do preço de abertura.
+
+8. Traçar gráfico de velas com Python
+Podemos facilmente plotar gráficos de velas com o pacote Python "plotly dot graph underscore objects". Importamos o pacote imediatamente e definimos um candle usando o índice de dados da série temporal, ou seja, Data, e as colunas "Aberto", "Alto", "Baixo", "Fechado" nos dados de preço. Em seguida, chamamos Figure para criar um gráfico, passando nossos dados como uma lista. Finalmente, chamamos o método "show" para exibi-lo. Isso criará um gráfico interativo.
+
+9. Vamos praticar!
+Vamos praticar!

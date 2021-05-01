@@ -1,0 +1,32 @@
+1. Florestas aleatórias
+Agora que cultivamos algumas árvores de decisão, vamos plantar uma floresta inteira.
+
+2. Compensação de polarização-variância
+Florestas aleatórias foram criadas para reduzir a variância das árvores de decisão. As árvores de decisão podem funcionar bem em dados de treinamento, mas não tão bem em dados de teste. Este é um modelo de alta variância, como este ajuste polinomial aos dados mostrados aqui. As previsões variam muito após o conjunto de treinamento e são ruins no conjunto de teste.
+
+3. Alta polarização
+O oposto de um modelo de alta variação é um modelo de alta polarização, como este ajuste linear. Ele captura a tendência geral, mas perde pequenos detalhes. Equilíbrio de florestas aleatórias entre modelos de alta variância e alta tendência.
+
+4. Florestas aleatórias
+Florestas aleatórias são nomeadas assim porque são uma coleção de árvores de decisão. Aqui está uma floresta aleatória de 4 árvores.
+
+5. Agregação de bootstrap (ensacamento)
+Florestas aleatórias têm diferenças na maneira como as árvores são criadas. Primeiro, fazemos uma amostra com substituição de nosso conjunto de treinamento para obter conjuntos de dados para cada árvore que ajustamos. Isso significa que pegamos amostras de nosso conjunto de treinamento, mostrado na parte superior, com cada ponto de dados sendo extraído de todo o conjunto de dados. Isso é bootstrapping e a amostra bootstrapped é mostrada na parte inferior. Bootstrapping significa que podemos ter pontos repetidos em nosso exemplo, como aqueles repetidos que você vê no exemplo bootstrapped. Também podemos omitir alguns pontos de dados, como os 2 ausentes na amostra inicializada.
+
+6. Amostragem de recursos
+Portanto, as florestas aleatórias são um conjunto de árvores de decisão e usam bootstrapping para obter conjuntos de dados para cada árvore, o que é chamado de agregação de bootstrap ou bagging. Outra diferença entre árvores de decisão normais e florestas aleatórias é como as divisões acontecem. Em vez de tentar divisões em todos os recursos, testamos um número menor de recursos para cada divisão. Isso ajuda a reduzir a variação do nosso modelo de floresta aleatório.
+
+7. implementação do sklearn
+Implementamos florestas aleatórias em sklearn como árvores de decisão. Após importar a classe, criamos uma nova instância. Então, nós o ajustamos aos nossos recursos e metas e avaliamos o desempenho com a função de pontuação. Isso produz o valor de R ao quadrado - 1 significa previsões perfeitas, 0 significa muito ruim e negativo é terrível.
+
+8. Hiperparâmetros
+Florestas aleatórias têm muitos hiperparâmetros que podemos ajustar. Freqüentemente, queremos ajustar max_features e max_depth. max_features é o número de recursos que são escolhidos aleatoriamente nas divisões; é a raiz quadrada do número total de recursos por padrão. Costumo pesquisar um intervalo de 2 ou 3 até o número total de recursos para este hiperparâmetro. max_depth limita o número total de divisões nas árvores, que pode variar de 5-20. O hiperparâmetro n_estimators é o número de árvores na floresta. Devemos definir esse número como um número maior do que o padrão de 10. Normalmente, o desempenho se nivela em um grande número de árvores na casa das centenas. Por último, é sempre uma boa ideia definir o random_state, para que nossos resultados sejam reproduzíveis.
+
+9. ParameterGrid
+sklearn tem ParameterGrid para ajudar a pesquisar hiperparâmetros. Também poderíamos usar GridSearchCV com TimeSeriesSplit no sklearn, mas não temos tempo para cobrir isso neste curso. ParameterGrid cria combinações das entradas em um dicionário que fornecemos. Cada entrada no dicionário deve ser uma lista, mesmo se for um único valor. Aqui está um exemplo.
+
+10. ParameterGrid
+Assim que tivermos o ParameterGrid, faremos um loop por ele. Para definir hiperparâmetros, "desempacotamos" o dicionário como argumentos individuais com o asterisco duplo. Em seguida, ajustamos o conjunto de trem e avaliamos o desempenho no conjunto de teste, anexando a pontuação a uma lista. Usamos a função argmax () de numpy para obter o índice da melhor pontuação de teste e, em seguida, obter os melhores hiperparâmetros de nosso ParameterGrid. Isso dá max_depth de 5, max_features de 8 e 200 árvores.
+
+11. Plante algumas florestas aleatórias!
+Ok, é hora de ver o desempenho das florestas aleatórias!

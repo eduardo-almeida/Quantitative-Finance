@@ -1,0 +1,8 @@
+1. Parabéns!
+Parabéns por terminar este curso. Você fez isso! Cobrimos muito material em um curto período de tempo, então você deve se orgulhar de si mesmo!
+
+2. Você conseguiu!
+Neste curso, você se familiarizou com negociações financeiras com Python. No capítulo 1, você aprendeu como obter dados de negociação, verificar e plotar os dados e implementar uma estratégia de negociação simples com bt. No capítulo 2, familiarizou-se com os indicadores técnicos e aprendeu como calculá-los com a biblioteca talib. No capítulo 3, você aprendeu como construir sinais de negociação, construir estratégias de negociação baseadas em sinais e realizar backtesting de estratégia com bt. Você também aprendeu como conduzir a otimização da estratégia e benchmarking. Por último, mas não menos importante, no capítulo 4 você ganhou conhecimento de como avaliar o desempenho da estratégia com várias métricas ajustadas ao risco.
+
+3. Obrigado!
+Espero que você tenha gostado de fazer este curso tanto quanto eu gostei de criá-lo. Daqui para frente, você pode explorar ainda mais seus interesses em Python, mercados financeiros e negociação. Obrigado pelo tempo e esforço que você dedicou a este curso! Desejo-lhe boa sorte em seu aprendizado futuro.

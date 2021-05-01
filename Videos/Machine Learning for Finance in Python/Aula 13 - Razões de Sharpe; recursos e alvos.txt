@@ -1,0 +1,29 @@
+1. Razões de Sharpe; recursos e alvos
+Como decidimos um portfólio ideal? Aqui, aprenderemos como escolher os portfólios ideais usando o índice de Sharpe e como treinar um regressor de aprendizado de máquina para prever os pesos ideais do portfólio.
+
+2. Qual o melhor portfólio?
+Temos várias opções para o "melhor" portfólio. Poderíamos buscar a volatilidade mais baixa, mas os retornos não são muito altos. Também podemos buscar os retornos mais altos, mas a volatilidade é maior. Existe outra opção.
+
+3. O índice de Sharpe
+Também poderíamos usar o índice de Sharpe. O melhor portfólio do índice de Sharpe é o X laranja no gráfico.
+
+4. O índice de Sharpe
+O índice de Sharpe é encontrado pegando os retornos do portfólio, subtraindo a taxa de retorno sem risco e dividindo pela volatilidade do portfólio. Aqui, assumiremos uma taxa livre de risco de 0%, o que significa reter dinheiro.
+
+5. Obtendo nossos índices de Sharpe
+Para calcular as proporções de Sharpe a partir de nossos dados, começaremos com dicionários vazios. Eles armazenarão os índices de Sharpe para carteiras e os índices do melhor índice de Sharpe para cada data. Em seguida, percorremos nossas datas usando as chaves portfolio_returns e calculamos as taxas de Sharpe. Obtemos retornos de portfolio_returns para aquela data, bem como um contador, i, usando o enumerado do Python. A volatilidade é obtida da carteira_volatilidade para essa data e índice, i. Em seguida, usamos setdefault no dicionário sharpe_ratio. Isso define o valor para a data atual em uma lista vazia se não existir. Em seguida, anexamos o índice de retornos e volatilidade à lista de índices de Sharpe para aquela data. Finalmente, usamos a função argmax () de numpy para encontrar o índice onde a proporção de Sharpe é maior.
+
+6. Crie recursos
+Em seguida, precisamos de recursos para aprendizado de máquina. Manteremos a simplicidade e usaremos as médias móveis dos preços das ações. Aqui, usaremos uma média móvel exponencialmente ponderada, ou EWMA, o que significa que os preços recentes recebem um peso maior do que os preços mais antigos, de acordo com uma curva exponencial. Calculamos o EWMA diário com um intervalo de 30. Isso significa que os últimos 30 dias são considerados no EWMA. Em seguida, reamostramos a média móvel para o início do mês útil, ou BMS, que significa o primeiro dia útil do mês. Finalmente, mudamos nosso índice de tempo à frente em um, o que alinha o EWMA do mês anterior com a melhor carteira do mês atual.
+
+7. Calcular recursos e metas
+Agora podemos calcular recursos e metas. Nossos recursos serão o EWMA que acabamos de criar, e os alvos são o melhor portfólio de acordo com o índice de Sharpe. Começamos com algumas listas vazias para armazenar os recursos e destinos. Em seguida, percorremos nossos índices e valores EWMA mensais usando o método iterrows () do pandas. Isso nos permite obter o índice de portfólio onde obtivemos o melhor índice de Sharpe usando max_sharpe_idxs e anexar o portfolio_weights à nossa lista de alvos. Em seguida, acrescentamos o EWMA à lista de recursos. Por último, convertemos ambos em matrizes numpy.
+
+8. Replantar fronteira eficiente
+Vamos reconstituir a fronteira eficiente com nosso portfólio ideal. Pegamos a última data nos dados de nossas chaves de covariância e, em seguida, obtemos os retornos e a volatilidade dessa data. Em seguida, dispersamos a volatilidade contra os retornos. Em seguida, obtemos o índice do portfólio onde temos o melhor índice de Sharpe de max_sharpe_idxs e criamos um ponto para esse portfólio. Definimos o argumento do marcador como um x, e a cor é diferente dos pontos regulares para que se destaque.
+
+9. Fronteira eficiente com Sharpe
+Nosso gráfico é assim, com o x laranja designando o ponto com a melhor proporção de Sharpe.
+
+10. Pegue Sharpe!
+Agora é sua vez de encontrar carteiras ideais usando o índice Sharpe.

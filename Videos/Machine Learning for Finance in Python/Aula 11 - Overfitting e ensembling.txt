@@ -1,0 +1,32 @@
+1. Overfitting e ensembling
+Você deve ter notado que a maioria de nossos modelos se saem bem no conjunto de dados de treinamento, mas não tão bem no conjunto de dados de teste. Isso é chamado de overfitting. Existem várias maneiras de lidar com isso, e veremos como usar o dropout com redes neurais para combater o sobreajuste. Também aprenderemos sobre modelos de agrupamento para previsões aprimoradas.
+
+2. Overfitting
+Como vimos com a maioria de nossos modelos, os dados de treinamento são adequados, mas não os dados de teste. Isso é um sinal de que estamos superdimensionando. Dependendo do seu modelo, você pode ajustar diferentes hiperparâmetros para diminuir o sobreajuste. Com as redes neurais, temos muitos hiperparâmetros que podemos definir.
+
+3. Simplifique seu modelo
+Uma forma de combater o overfitting é diminuir a complexidade do nosso modelo. Vimos com as árvores de decisão que as árvores muito profundas superestimarão os dados. Podemos diminuir esse sobreajuste limitando a profundidade da árvore. O equivalente em redes neurais seria diminuir o número total de neurônios.
+
+4. Opções de rede neural
+Para redes neurais, temos muitas opções para combater o overfitting: diminuir o número de nós, regularização L1 / L2, Dropout, projetos de autoencoder, parada antecipada, adição de ruído, restrições de norma máxima e agrupamento.
+
+5. Desistência
+Usaremos dropout aqui porque é fácil de implementar e pode funcionar muito bem. No keras, é outra camada em nossa pilha de rede neural. O abandono diminui aleatoriamente uma fração dos neurônios durante o treinamento. Isso ajuda a rede a distribuir seu aprendizado por todo o modelo e também a generalizar melhor para dados invisíveis.
+
+6. Desistência em keras
+Adicionar abandono ao keras é fácil. Importamos a camada Dropout de keras-dot-layers e, em seguida, simplesmente a adicionamos como outra camada com model-dot-add (). O número que definimos na camada Dropout é a fração de neurônios a cair durante o treinamento. Como estamos usando redes muito pequenas, devemos definir esse número como 0-ponto-1 ou 0-ponto-2. Freqüentemente, isso é realmente definido como 0-ponto-5 para modelos maiores como o mostrado aqui.
+
+7. Comparação do conjunto de teste
+Se compararmos agora o desempenho do conjunto de teste, podemos ver que o modelo de abandono se sai um pouco melhor. As pontuações do trem e dos testes tornam-se mais semelhantes quando o abandono é adicionado, então estamos nos afastando do overfitting.
+
+8. Conjunto
+Outra forma de combater o sobreajuste é usar o ensembling. Uma floresta aleatória é um exemplo de agrupamento de muitas árvores de decisão. Simplesmente calculamos a média das previsões para obter uma previsão final. Este é o tipo de conjunto que aprenderemos aqui - cálculo de média simples. Você também pode pegar as previsões de vários modelos e alimentá-las em outro modelo para um tipo mais avançado de combinação.
+
+9. Implementando o conjunto
+Agora vamos agrupar os modelos usando a média simples. Podemos usar numpy para implementar isso. Pegamos as previsões de cada um de nossos modelos e os salvamos como test_pred1 e test_pred2, depois os empilhamos horizontalmente com numpy-dot-hstack (). hstack pega uma tupla de matrizes como um argumento e transforma nossos vetores de coluna em uma matriz ao empilhar horizontalmente, ou empilhamento de coluna, nossos dois vetores de predição. Podemos então usar numpy-dot-mean () para obter a média entre as linhas, o que nos dá uma previsão para cada amostra. O argumento eixo = 1 significa que as médias serão obtidas nas linhas, não nas colunas.
+
+10. Comparando o conjunto
+Olhando para as pontuações do teste R-quadrado, podemos ver uma ligeira melhoria com o conjunto em comparação com os modelos individuais, embora o efeito aqui seja pequeno.
+
+11. Desistência e conjunto!
+Ok, é hora de você tentar o abandono e a combinação.

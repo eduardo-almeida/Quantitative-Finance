@@ -1,0 +1,20 @@
+1. Análise de retorno da estratégia
+Bem vindo de volta! Neste capítulo, vamos discutir mais sobre a avaliação do desempenho da estratégia.
+
+2. Obtenha estatísticas detalhadas de backtest
+Nas lições anteriores, construímos e testamos várias estratégias de negociação e visualizamos o desempenho da estratégia. Agora vamos examinar os detalhes das estatísticas de backtest. Suponha que temos um resultado de backtest de estratégia salvo em bt underscore result. Podemos obter todas as estatísticas de backtest chamando dot stats e salvando-as em um DataFrame. O DataFrame é indexado por várias métricas de desempenho. Há muitas informações aqui, então vamos nos concentrar em várias informações importantes.
+
+3. Retornos da estratégia
+A métrica mais básica para a avaliação do desempenho da estratégia é a taxa de retorno. Uma taxa de retorno é o ganho ou perda líquida de um portfólio ou ativo durante um período de tempo especificado, por exemplo, diário, mensal ou anual. Para obter a taxa de retorno para diferentes períodos de tempo, podemos dividir o dataframe de estatísticas resInfo pelos nomes das métricas. Por exemplo, use a média de sublinhado diária, média de sublinhado mensal e média de sublinhado anual para obter o retorno diário, mensal e anual, respectivamente. No código, formatamos a saída em números flutuantes com 4 casas decimais usando a expressão após o operador de sinal de porcentagem. Na saída, por exemplo, o retorno diário é mostrado como ponto 1966 ou 19 ponto 66 por cento.
+
+4. Taxa composta de crescimento anual
+Outra métrica de retorno útil é chamada de taxa composta de crescimento anual ou CAGR. É a taxa de retorno necessária para que um ativo ou conta de negociação cresça do saldo inicial ao saldo final, assumindo que todos os lucros foram reinvestidos no final de cada ano. Por exemplo, um ativo pode aumentar o valor em 8% em um ano, diminuir o valor em 3% no ano seguinte e aumentar o valor em 5% no ano seguinte. O CAGR ajuda a suavizar os retornos quando se espera que as taxas de crescimento sejam voláteis e inconsistentes. Também torna mais fácil comparar resultados alternativos diferentes. Podemos obter o CAGR dividindo o DataFrame de estatísticas com o nome cagr.
+
+5. Plotar histograma de retorno
+Podemos traçar o histograma de retorno para verificar a distribuição dos retornos. Isso é feito facilmente chamando histogramas de sublinhado gráfico no resultado de sublinhado bt. Use o argumento freq para especificar as frequências de retorno a serem plotadas, por exemplo w para semanal. Por padrão, ele traçará um histograma com base nos retornos diários.
+
+6. Compare os retornos de lookback da estratégia
+Além disso, podemos comparar os resultados de retorno de várias estratégias lado a lado. Suponha que executamos uma otimização de estratégia e temos dois resultados de backtest salvos nos resultados de sublinhado bt. Chame os retornos de lookback de lookback de display underscore e podemos comparar os retornos de lookback de ambas as estratégias.
+
+7. Vamos praticar!
+Ótimo começo! Agora é sua vez de praticar!

@@ -1,0 +1,35 @@
+1. Transformações de dados, recursos e alvos
+Agora que estamos familiarizados com nossos dados, precisamos prepará-los para o aprendizado de máquina.
+
+2. Criação de recursos e metas
+Para preparar nossos dados, precisaremos de recursos e metas. Nossos recursos são entradas com as quais prevemos mudanças de preços futuras - a mudança de preço e o volume em 10 dias. Nossos objetivos são as mudanças de preços futuras. Geralmente, podemos usar DataFrames e Series do pandas em nossos algoritmos de aprendizado de máquina.
+
+3. Médias móveis
+É útil incorporar dados históricos como recursos; por exemplo, as alterações de preço nos últimos 200 dias. Em vez de incluir todas as alterações de preço dos 200 dias anteriores, podemos concentrar os dados anteriores em um único ponto usando indicadores técnicos como a média móvel mostrada aqui.
+
+4. Médias móveis
+Uma média móvel é a média de um valor nos últimos n dias. Os períodos clássicos de média móvel são 14, 50 e 200 dias para ações.
+
+5. Médias móveis simples
+Aqui está um gráfico que mostra o preço da AMD e uma média móvel simples de 200 dias, ou SMA. Você pode ver que as médias móveis suavizam os dados.
+
+6. Índice de Força Relativa
+O outro indicador que usaremos é o índice de força relativa, ou RSI. Isso oscila entre 0 e 100. Quando está perto de 0, isso pode significar que o preço se recuperou das baixas recentes. Quando o RSI está perto de 100, isso pode significar que o preço da ação deve cair.
+
+7. Equação RSI
+A equação para RSI é 100 menos 100 sobre 1 + força relativa. Força relativa é o ganho médio de aumentos de preços dividido pela perda média de diminuições de preços durante o período de tempo, n. Tanto o RSI quanto as médias móveis podem ser calculados com o pacote TA-lib. Esta biblioteca Python é um wrapper para código C, o que significa que podemos executar código C usando Python.
+
+8. Calculando SMA e RSI
+Para usar as funções do TA-lib para RSI e médias móveis, fornecemos uma matriz numpy de preços e o argumento timeperiod. Este é o valor de n mencionado nos slides anteriores. Estamos usando 200 para o período de tempo e adicionando os novos recursos ao nosso DataFrame como ma200 para a média móvel de 200 dias e rsi200 para o RSI de 200 dias. Para funções TALib, devemos fornecer matrizes numpy, não objetos pandas. A propriedade dot-values ​​de pandas Series e DataFrames produz matrizes numpy.
+
+9. Finalmente, nossos recursos
+Agora podemos fazer nossos recursos e metas. Escolhemos a variação percentual de fechamento de 10 dias e a média móvel de 200 dias e RSI de nosso DataFrame. Esses nomes de recursos vão para uma lista, que seleciona as colunas do DataFrame. Em seguida, selecionamos a variação percentual de fechamento futuro de 10 dias como nossa meta. Por fim, criamos um DataFrame com os recursos e os destinos para que possamos verificar as correlações.
+
+10. Verifique as correlações
+Antes de fazer qualquer aprendizado de máquina, é bom verificar os recursos e metas para correlações. Usamos a função corr () do pandas para calcular as correlações de Pearson, e a biblioteca marítima tem uma função de mapa de calor útil para traçar as correlações. A opção de anotação mostra os valores numéricos para cada correlação no gráfico.
+
+11. Gráfico de correlação
+O gráfico é assim, com cores variando de preto para correlações negativas a branco para correlações positivas. Os valores numéricos também são mostrados em cada quadrado. Para examinar a correlação entre duas variáveis, procuramos a interseção das duas variáveis ​​no gráfico. Por exemplo, o RSI e a mudança percentual do preço futuro de 10 dias se cruzam no canto esquerdo inferior. Essas variáveis ​​têm pouca ou nenhuma correlação, pois o valor é próximo a 0. Normalmente, um valor de 0-ponto-2 ou mais significa que há alguma correlação linear presente. A linha diagonal com todos os 1 mostra a correlação de cada variável consigo mesma, que é 1. Isso significa que cada variável está perfeitamente linearmente correlacionada consigo mesma, como esperamos.
+
+12. Vamos criar recursos e metas!
+Ok, acho que você está pronto para criar seus próprios recursos e alvos!

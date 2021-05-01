@@ -1,0 +1,17 @@
+1. Indicador de momentum: RSI
+Nesta lição, vamos discutir um indicador de momentum popular chamado Índice de Força Relativa ou RSI.
+
+2. O que é RSI?
+RSI significa Índice de Força Relativa. Também foi desenvolvido por Welles Wilder. RSI tem sido o indicador mais popular usado para medir o momentum, que é a velocidade de aumento ou queda dos preços. O RSI oscila entre 0 e 100. Tradicionalmente, um RSI acima de 70 indica uma condição de sobrecompra no mercado, o que significa que o ativo está sobrevalorizado e o preço pode reverter. Um RSI abaixo de 30 sugere uma condição de mercado sobrevendido, o que significa que o ativo está subvalorizado e o preço pode subir.
+
+3. Como o RSI é calculado?
+O cálculo do RSI segue uma fórmula simples. RS, ou Força Relativa, é a média das variações de preço para cima ao longo de n períodos escolhidos, dividida pela média das variações de preço para baixo nesses n períodos. A fórmula é construída de forma que um RSI seja limitado entre 0 e 100.
+
+4. Implementando RSI em Python
+RSI pode ser implementado em Python chamando talib dot RSI e passando a coluna de preço. Semelhante ao ADX, Welles Wilder usou uma janela de lookback de 14 períodos para cálculos RSI, que se tornou o padrão da indústria. Você pode alterar o período padrão com o parâmetro timeperiod. Observe que quanto mais longa a janela de lookback, menos sensível é o RSI às flutuações de preço. Os comerciantes podem querer alterar o período de tempo padrão para se adequar aos seus horizontes de tempo de negociação específicos, ou como uma entrada variável para testar diferentes estratégias de negociação. Neste código de amostra, calculamos o RSI e o salvamos em uma nova coluna DataFrame. Podemos usar cauda de ponto para verificar as últimas 5 linhas.
+
+5. Traçando RSI
+Semelhante ao ADX, é útil plotar o preço e o RSI um acima do outro. Neste código de amostra, criamos dois subplots, o gráfico superior mostra o preço e o gráfico inferior mostra o RSI. Observe no gráfico, quando o RSI está caindo perto de 30, o preço atinge o fundo e se recupera gradualmente, e quando o valor do RSI está se aproximando de 70, o preço atinge novos máximos e é mais provável que recue.
+
+6. Vamos praticar!
+Excelente! Agora vamos praticar!

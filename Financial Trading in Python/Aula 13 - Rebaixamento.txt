@@ -1,0 +1,23 @@
+1. Drawdown
+Nesta lição, vamos aprender sobre uma métrica de avaliação de desempenho chamada rebaixamento.
+
+2. O que é um rebaixamento?
+Um rebaixamento é um declínio de pico a vale durante um período específico para um ativo ou conta de negociação. Um rebaixamento é geralmente cotado como a porcentagem entre o pico e a depressão subsequente. Se uma conta de negociação tiver 1.000 e o fundo cair para 900 antes de voltar a ficar acima de 1.000, então a conta de negociação sofreu uma redução de 10%. Os saques são uma medida da volatilidade do lado negativo.
+
+3. Retirada máxima
+Um rebaixamento máximo é a perda máxima observada de um pico para o vale de uma conta, antes que um novo pico seja estabelecido. O levantamento máximo é um indicador de risco de baixa ao longo de um período de tempo especificado. Por exemplo, se uma conta começa com um valor de 1000, aumenta de valor para 1700 (ponto A), diminui para 900 (ponto B), aumenta para 1400 (ponto C), diminui para 800 (ponto D) e aumenta para 2000 (ponto E), o rebaixamento máximo é 1700 (no ponto A) menos 800 (no ponto D), então dividido por 1700, ou cerca de 53%.
+
+4. Obtenha reduções de estatísticas de backtest
+Podemos obter vários tipos de resultados de levantamento, como levantamento máximo, levantamento médio e dias de levantamento médio do DataFrame de estatísticas, conforme o código de amostra demonstra. A redução média é a porcentagem média de retirada durante o período de backtest da estratégia, e os dias médios de retirada são iguais ao número de dias em média que a carteira ou conta permaneceria em um período de retirada.
+
+5. A proporção de Calmar
+O índice Calmar foi criado por um administrador de fundos de hedge chamado Terry Young e publicado pela primeira vez em 1991. O nome Calmar é uma sigla do nome da empresa de Young e seu boletim informativo: California Managed Accounts Report. O índice Calmar é calculado como uma taxa de crescimento anual composta de portfólio ou conta, ou CAGR, dividido por sua redução máxima. As pessoas também se referem à proporção de Calmar como a proporção de rebaixamento. Uma vez que a redução máxima é uma medida do risco de queda, quanto maior o índice Calmar, melhor será o desempenho da estratégia em uma base ajustada ao risco durante o período de tempo determinado. Como regra geral, uma proporção Calmar maior do que 3 é considerada excelente.
+
+6. Calcule a proporção Calmar manualmente
+Podemos calcular a proporção Calmar manualmente usando estatísticas do resultado do backtest. Como o código de amostra demonstra, a proporção de Calmar é igual ao CAGR dividido pela redução máxima, ambos estão disponíveis dividindo o DataFrame de estatísticas. Isso pode nos dar uma compreensão intuitiva de como a proporção de Calmar é obtida. Observe também que a redução máxima é multiplicada por menos 1 durante o cálculo para converter o resultado em um número positivo. Ele é formatado para imprimir um número flutuante com 2 casas decimais.
+
+7. Obtenha a proporção Calmar de estatísticas de backtest
+Também podemos obter a proporção Calmar diretamente das estatísticas de resultado do backtest, referindo-nos ao nome calmar.
+
+8. Vamos praticar!
+Excelente! Agora vamos praticar!

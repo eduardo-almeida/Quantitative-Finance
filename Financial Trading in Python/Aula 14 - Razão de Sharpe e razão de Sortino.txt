@@ -1,0 +1,32 @@
+1. Razão de Sharpe e razão de Sortino
+Nesta lição, aprenderemos mais dois conceitos úteis para medir o desempenho da estratégia.
+
+2. Qual estratégia tem melhor desempenho?
+Pense um pouco: em termos de retorno, maior é sempre melhor? Suponha que temos duas estratégias com os seguintes resultados. A estratégia 1 tem um retorno de 15% e volatilidade de 30%, medida pelo desvio padrão do retorno. A estratégia 2 tem um retorno de 10% e volatilidade de 8%. Qual estratégia você acha que tem melhor desempenho? Lembre-se de sua escolha e voltaremos a isso mais tarde.
+
+3. Retorno ajustado ao risco
+Para tornar o desempenho comparável entre diferentes estratégias, devemos levar em consideração o retorno e o risco. Conseqüentemente, o retorno ajustado ao risco é um índice introduzido para avaliar o desempenho de uma estratégia, medindo quanto risco está envolvido na produção de um certo nível de retorno. Nesse contexto, um retorno maior é sempre melhor? Não necessariamente. Por exemplo, um retorno de 20% é impressionante. Mas se vier com uma volatilidade de retorno de 40% devido à negociação de ativos especulativos ou de risco, o desempenho é realmente moderado de uma perspectiva ajustada ao risco.
+
+4. Razão de Sharpe
+Uma medida de retorno ajustado ao risco é chamada de índice de Sharpe, desenvolvida pelo Prêmio Nobel William F.Sharpe. O índice de Sharpe é calculado como o retorno médio que excede a taxa livre de risco, dividido pelo excesso de volatilidade do retorno, ou seja, o desvio padrão. A taxa livre de risco é geralmente o equivalente a um título seguro e livre de risco, como títulos do Tesouro dos EUA ou Gilts do Reino Unido. Sob a atual taxa de juros baixa ou mesmo ambiente de taxa de juros negativa nos EUA e na Europa, podemos assumir que a taxa livre de risco é zero. O índice de forma fornece uma maneira simples de medir o retorno obtido por unidade de risco. Em geral, quanto maior o índice de Sharpe, mais atraente é o retorno ajustado ao risco.
+
+5. Agora escolha novamente
+Agora vamos voltar à questão anterior. Dadas as informações, podemos calcular o índice de Sharpe para cada estratégia. A estratégia 1 tem uma proporção de Sharpe de ponto 5 e a estratégia 2 tem 1 ponto 25. Claramente, a estratégia 2 tem um desempenho melhor, pois gera 1 ponto 25 unidades de retorno em excesso por unidade de risco, em comparação com apenas o ponto 5 da estratégia 1.
+
+6. Obtenha a proporção de Sharpe do backtest bt
+Para obter a proporção de Sharpe a partir do resultado do backtest bt, primeiro chame dot stats para obter todas as estatísticas do backtest e salve-as em um DataFrame. Então, podemos obter a proporção de Sharpe dividindo o DataFrame. Existem rácios de Sharpe diários, mensais e anuais disponíveis nas estatísticas. Além disso, formatamos a saída para imprimir um float com duas casas decimais.
+
+7. Calcule a proporção de Sharpe manualmente
+Também podemos calcular o índice de Sharpe usando o retorno anual e a volatilidade das estatísticas manualmente, conforme mostrado no código. Este cálculo nos permite ver cada componente do índice de Sharpe.
+
+8. Limitações da proporção de Sharpe
+Apesar dos benefícios proporcionados por sua simplicidade, o índice de Sharpe é criticado por usar a volatilidade do retorno total no cálculo. Em outras palavras, ele não distingue a volatilidade boa / positiva da volatilidade ruim / negativa e pune ambas igualmente. Na realidade, a volatilidade de alta, embora desejável, pode distorcer os resultados para baixo, resultando em um índice de Sharpe mais baixo. Portanto, ele pinta um quadro impreciso da eficiência risco-recompensa.
+
+9. Razão de Sortino
+Para resolver essa deficiência, o índice de Sortino é uma modificação do índice de Sharpe. Em vez de usar a volatilidade total, o retorno em excesso da taxa livre de risco é dividido pela volatilidade inferior, ou desvio inferior do retorno. Em outras palavras, apenas o risco de baixa será punido.
+
+10. Obtenha a proporção de Sortino do backtest bt
+Podemos obter a proporção de Sortino a partir das estatísticas de backtest de maneira semelhante à proporção de Sharpe. Existem rácios Sortino diários, mensais e anuais disponíveis. Quanto maior for a proporção de Sortino, melhor será o desempenho.
+
+11. Vamos praticar!
+Agora é sua vez!

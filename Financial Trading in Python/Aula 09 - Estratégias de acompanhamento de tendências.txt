@@ -1,0 +1,29 @@
+1. Estratégias de seguimento de tendências
+Vamos construir e testar uma estratégia de seguimento de tendências!
+
+2. Dois tipos de estratégias de negociação
+Os dois tipos mais populares de estratégias de negociação são o acompanhamento de tendências e a reversão à média. O acompanhamento de tendência, também conhecido como estratégia de momentum, aposta que a tendência de preço continuará na mesma direção. Você implementou uma estratégia simples de seguir tendências na lição anterior. Quando o preço sobe acima de sua média móvel, entre em uma posição longa para apostar que o preço continuará a subir. Os traders geralmente usam indicadores de tendência, como médias móveis, ADX, etc, para construir sinais de negociação para estratégias de acompanhamento de tendências. As estratégias de reversão à média, por outro lado, apostam que quando o mercado atinge uma condição de sobrecompra ou sobrevenda, o preço tende a reverter para a média. Aprenderemos mais sobre eles na próxima lição. Os comerciantes costumam usar indicadores como RSI, bandas de Bollinger, etc, para construir sinais de negociação para estratégias de reversão à média. Os mercados estão constantemente entrando e saindo das fases de tendência e reversão à média. Portanto, é benéfico desenvolver estratégias para ambas as fases.
+
+3. Estratégia de crossover MA
+A filosofia da estratégia de tendência a seguir é: a tendência é sua amiga. Vejamos um exemplo comum de estratégia de acompanhamento de tendências chamada MA crossover, que envolve dois indicadores de média móvel, um mais longo e um mais curto. Usaremos o EMA, por exemplo. Quando a MME de curto prazo cruza acima da MME de longo prazo, é um sinal longo, pois sugere que o preço está ganhando impulso. Quando a MME de curto prazo cruza abaixo da MME de longo prazo, é um sinal curto, pois sugere que o preço está perdendo impulso.
+
+4. Calcule os indicadores
+Primeiro, vamos calcular os indicadores com a função talib EMA. Observe que usamos para sublinhado o quadro para salvar o resultado como um DataFrame do pandas.
+
+5. Construa o sinal
+Construímos o sinal copiando o indicador EMA DataFrame com o método de cópia de pontos. Definimos o valor do sinal como 0 para os n períodos iniciais que não têm pontos de dados suficientes para a EMA. Então, definimos o sinal. Quando o valor da EMA de curto prazo é maior do que o valor da EMA de longo prazo, o sinal indica uma posição longa; quando a MME de curto prazo é menor do que a MME de longo prazo, o sinal é menos um indicando uma posição curta. Observe que vender uma ação a descoberto significa essencialmente apostar que o preço cairá e envolve a venda de ações emprestadas e, posteriormente, a sua recompra pelo preço de mercado.
+
+6. Trace o sinal
+Podemos plotar o sinal com os indicadores de preço e EMA juntos. Primeiro, use bt merge para combinar vários DataFrames. Ele pega vários DataFrames e os mescla em um baseado no índice DataFrame, neste caso, a Data. Em seguida, use o atributo de colunas de pontos do DataFrame para renomear as colunas de dados e criar um gráfico. Como o sinal tem uma escala diferente dos dados de preço e EMA, defina o sublinhado secundário y para a coluna de sinal para representá-lo no eixo y secundário à direita. O gráfico dá uma indicação clara de onde assumir posições compradas ou vendidas.
+
+7. Defina a estratégia com o sinal
+Agora estamos prontos para implementar o sinal na estratégia. Na lição anterior, usamos algos SelectWhere para construir o sinal. Aqui, o sinal não é construído diretamente a partir da comparação de preços, portanto, usaremos outra forma fornecida por bt. Chame o WeighTarget e passe o sinal DataFrame. O valor do sinal 1, menos 1 ou 0 ditará em qual período teremos posições longas, posições curtas ou nenhuma posição.
+
+8. Faça um backtest da estratégia baseada em sinais
+Assim que tivermos a estratégia definida, crie e execute um backtest e veja como ele funciona.
+
+9. Traçar resultados de backtest
+Por último, vamos plotar e revisar o resultado do backtest. No geral, a estratégia é lucrativa com base no período histórico testado em retrospecto.
+
+10. Vamos praticar!
+Agora é hora de praticar!

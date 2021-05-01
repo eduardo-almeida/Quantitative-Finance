@@ -1,0 +1,26 @@
+1. Estratégia de reversão à média
+Nesta lição, vamos aprender a construir e fazer um backtest de uma estratégia de reversão à média.
+
+2. Estratégia de reversão à média baseada no RSI
+A filosofia da estratégia de reversão à média é: compre o medo e venda a ganância. Ou, para ser mais claro: compre o mergulho e venda o pico. Vejamos um exemplo de estratégia de reversão à média envolvendo o indicador RSI. Quando o RSI sobe para um valor relativamente alto, 70 por exemplo, é um sinal curto, pois sugere que o ativo provavelmente está sobrecomprado e o preço pode reverter em breve. Enquanto isso, quando o RSI cai para um valor relativamente baixo, 30 por exemplo, é um sinal longo, pois sugere que o ativo provavelmente está sobrevendido e o preço pode subir em breve.
+
+3. Calcule o indicador
+Primeiro, vamos calcular os indicadores com a função talib RSI e salvar o resultado como um DataFrame com para sublinhado quadro.
+
+4. Construa o sinal
+Então, podemos construir o sinal. Primeiro, crie um DataFrame de sinal copiando o indicador RSI DataFrame. Vamos definir: quando o valor do RSI é inferior a 30, isso sugere que o ativo provavelmente está se aproximando de uma condição de sobrevenda, então defina o sinal para um para entrar em uma posição longa. Por outro lado, quando o valor do RSI é maior do que 70, isso sugere que o ativo provavelmente está se aproximando de uma condição de sobrecompra, então defina o sinal para menos um para entrar em uma posição curta. Se o valor RSI estiver entre os valores intermediários, defina o sinal como zero, indicando que não há posições de negociação.
+
+5. Trace o sinal
+Para plotar o sinal com o preço juntos, use bt merge para combinar vários DataFrames e, em seguida, chame dot plot. Observe que não mesclamos o indicador RSI com o preço, pois eles estão em escalas diferentes. Lembre-se que no capítulo dois aprendemos que o RSI é limitado entre 0 e 100. Em vez disso, podemos colocar o gráfico RSI junto com o gráfico do sinal para observar onde fazer negócios longos ou curtos com base nos valores do RSI.
+
+6. Defina a estratégia com o sinal
+Agora estamos prontos para implementar o sinal na estratégia. Assim como na lição anterior, chame algos WeighTarget e passe o sinal DataFrame. O valor do sinal ditará qual período terá posições longas, posições curtas ou nenhuma posição.
+
+7. Faça um backtest da estratégia baseada em sinais
+Assim que tivermos a estratégia definida, crie e execute um backtest e veja como ele funciona.
+
+8. Traçar o resultado do backtest
+Por último, vamos plotar e revisar o resultado do backtest. Uma vez que a estratégia de reversão à média baseada no RSI tenta tirar vantagem dos desequilíbrios temporários do mercado, ela tende a negociar com mais frequência. Além disso, se o valor do RSI não indicar uma condição de mercado sobrecomprado ou sobrevendido, nenhuma negociação é realizada, então a linha de lucro é plana. No geral, a estratégia é lucrativa com base no período histórico testado em retrospecto.
+
+9. Vamos praticar!
+Ótimo progresso! Agora é sua vez de praticar.

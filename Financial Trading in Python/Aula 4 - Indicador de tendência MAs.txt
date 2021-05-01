@@ -1,0 +1,32 @@
+1. Indicador de tendência MAs
+Agora vamos aprender sobre indicadores técnicos!
+
+2. O que são indicadores técnicos?
+Um indicador técnico é um cálculo baseado em dados históricos de mercado, como preços, volumes, etc. Eles são essenciais para análises técnicas, que pressupõem que o mercado é eficiente e os preços incorporam todas as informações públicas, como notícias financeiras ou políticas públicas. Os comerciantes usam indicadores técnicos para obter informações sobre os padrões de preços anteriores e para antecipar possíveis movimentos de preços futuros.
+
+3. Tipos de indicadores
+Existem basicamente três tipos de indicadores. Os indicadores de tendência, como Média móvel, Índice de movimento direcional médio, medem a direção ou força de uma tendência. Os indicadores de momentum, como o Índice de Força Relativa, medem a velocidade do movimento do preço, que é a taxa de mudança em uma direção para cima ou para baixo. Indicadores de volatilidade, como Bollinger Bands, medem a magnitude dos desvios de preços.
+
+4. O pacote TA-Lib
+Usaremos o pacote TA Lib para implementar indicadores técnicos em Python. TA Lib, que significa Biblioteca de Análise Técnica, inclui mais de 150 indicadores e é muito popular entre os comerciantes técnicos. Para importar o pacote, use import talib.
+
+5. Indicadores de média móvel
+Vamos começar com os indicadores de tendência mais comumente usados: Média móvel simples (SMA) e Média móvel exponencial (EMA). Elas são chamadas de médias "móveis" porque cada valor médio é calculado usando pontos de dados dos n períodos mais recentes e, portanto, se move junto com o preço. O cálculo das médias cria um efeito de suavização que ajuda a dar uma indicação mais clara da direção em que o preço está se movendo - para cima, para baixo ou lateralmente. As médias móveis calculadas com base em um período de lookback mais longo têm mais efeitos de suavização do que um período mais curto.
+
+6. Média Móvel Simples (SMA)
+Um SMA é a média aritmética dos últimos n preços. N é um número escolhido de períodos para calcular a média. Anteriormente, calculamos o SMA com o método de média de ponto rolante de ponto de um DataFrame. Com talib, podemos simplesmente chamar talib ponto SMA e passar a coluna DataFrame, neste caso o preço de fecho. Use o parâmetro timeperiod para especificar o período de média. Observe que, como um SMA de n períodos precisa de pelo menos n pontos de dados para calcular o primeiro valor médio, obteremos valores de NA para as primeiras n menos 1 linhas. Em vez disso, podemos usar o método tail para verificar as últimas 5 linhas.
+
+7. Traçando o SMA
+Podemos traçar SMAs junto com o preço com matplotlib. O rótulo é adicionado para indicar cada série de dados. A linha azul é o SMA calculado com um período de lookback mais curto e acompanha de perto o movimento do preço. A linha vermelha é o SMA calculado com um período de lookback mais longo e é mais suave e menos responsivo às flutuações de preço.
+
+8. Média móvel exponencial (EMA)
+Outro tipo popular de média móvel é a média móvel exponencial, ou MME. Uma MME é uma média exponencialmente ponderada dos últimos n preços, em que o peso diminui exponencialmente com cada preço anterior. Para implementar uma EMA com talib, chame talib ponto EMA e passe a coluna DataFrame como entrada, neste caso o preço de fechamento. Da mesma forma, especifique o período de média com o parâmetro timeperiod.
+
+9. Traçando a EMA
+Tal como acontece com os SMAs, vemos que ao traçar os MMEs e os dados de preços, a MME mais curta em azul é mais reativa ao movimento do preço em comparação com a MME mais longa em vermelho.
+
+10. SMA vs. EMA
+A principal diferença entre SMAs e EMAs é que os EMAs dão maior peso aos dados mais recentes, enquanto os SMAs atribuem peso igual a todos os pontos de dados. Conforme mostrado no gráfico contendo MME e SMA (calculado com a mesma janela de lookback), sempre que o preço faz uma grande mudança, a MME na linha laranja é mais sensível ao movimento do preço em comparação com a SMA na linha azul.
+
+11. Vamos praticar!
+Sua vez de praticar!

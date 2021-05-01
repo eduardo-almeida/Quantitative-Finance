@@ -1,0 +1,23 @@
+1. Familiarizando-se com seus dados comerciais
+Nesta lição, exploraremos como usar Python para nos familiarizarmos com seus dados comerciais.
+
+2. Diferentes tipos de comerciantes
+Podemos categorizar os traders em alguns tipos de acordo com o tempo que mantêm suas posições de negociação, ou seja, seus períodos de retenção. Os day traders mantêm suas posições ao longo do dia, mas geralmente não durante a noite. Eles tendem a negociar com freqüência. Os traders de swing mantêm suas posições por alguns dias a várias semanas. E os operadores de posições mantêm suas posições por alguns meses a vários anos.
+
+3. Faça uma nova amostra dos dados
+Dependendo do estilo de negociação, você pode querer olhar para os dados da série temporal de diferentes intervalos, como horário, diário, semanal, etc. Por exemplo, um trader de swing prefere ter um instantâneo de preço diário em vez de um para cada hora . Você pode usar o método "resample" para obter uma amostra de um DataFrame Python. O código aqui demonstra como reamostrar dados por hora em dados diários ou semanais, especificando o parâmetro como "D" e "W" em "reamostrar", respectivamente. Normalmente, reduzimos a amostragem de um período de tempo mais estreito para um período de tempo mais amplo, como de hora a dia para diário. Isso resultará em um número menor de linhas e os dados de amostra do período de tempo mais amplo são o resultado agregado do período de tempo inferior. Nesse caso, usamos a média, mas também pode ser o mínimo, o máximo ou a soma.
+
+4. Calcular retornos diários
+Também é útil se familiarizar com seus dados de negociação, verificando os retornos anteriores e a volatilidade. Por exemplo, podemos usar o método "pct underscore change" para calcular a variação percentual no preço, também conhecido como retorno de preço. Ele calcula a variação percentual da linha anterior por padrão, portanto, se usarmos dados de preços diários, obteremos retornos diários. Traçando os resultados, podemos obter uma compreensão rápida das faixas de retorno típicas e do perfil de volatilidade de um ativo financeiro.
+
+5. Trace um histograma de retornos diários
+Também é útil traçar um histograma dos retornos diários dos preços. Um histograma é uma representação visual da distribuição dos dados subjacentes. Para plotar um histograma em Python, chame o método "hist" em uma coluna DataFrame. Você pode usar "bins" para especificar o quão granular você deseja que o gráfico seja.
+
+6. Transformação de dados
+O mercado financeiro reflete o medo, a ganância e os preconceitos do comportamento humano, portanto, os dados do mercado são inerentemente barulhentos e confusos. Para dar sentido aos dados, os comerciantes realizam várias transformações de dados e criam os chamados indicadores técnicos. Um indicador muito comum é a média móvel simples ou SMA. É simplesmente a média aritmética do preço em um período especificado. A média é chamada de "movimento" porque é sempre calculada usando os n períodos mais recentes e, portanto, se move junto com o preço no gráfico. O SMA pode ser facilmente calculado usando "média de ponto rolante de ponto" na coluna de preço e especifique o período de média com o argumento "janela é igual a n".
+
+7. Trace a média móvel
+Podemos traçar o SMA e o preço em um gráfico. O gráfico inclui uma legenda e mostra que a média móvel tem um efeito de suavização no preço. Existe uma rica biblioteca de indicadores técnicos desenvolvidos para negociação. Exploraremos mais detalhes no capítulo 2.
+
+8. Vamos praticar!
+Agora vamos praticar um pouco!
