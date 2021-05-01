@@ -1,0 +1,14 @@
+1. Análise exploratória inicial
+Agora que você importou o conjunto de dados de marketing e está familiarizado com ele, vamos fazer algumas análises exploratórias iniciais.
+
+2. Quantos usuários veem os ativos de marketing?
+Para começar, vamos ter uma ideia de quantos usuários exclusivos veem nossos ativos de marketing a cada dia. Podemos usar o método groupby () no DataFrame de marketing. Para agrupar por data, passamos 'date_served' como o argumento para groupby (). Em seguida, selecionamos a coluna user_id fora de groupby () e usamos o método nunique () para contar o número de usuários únicos a cada dia. Parece que cerca de 300 usuários veem nossos anúncios por dia.
+
+3. Visualização de resultados
+Como você viu no slide anterior, não é fácil interpretar os resultados quando eles são impressos em uma tabela. É muito mais fácil notar as flutuações em nossas métricas quando as representamos. Primeiro importamos matplotlib dot pyplot como plt. Em seguida, plotamos a série daily_users. É uma boa prática sempre adicionar títulos e rótulos ao gráfico para transmitir claramente as informações que o gráfico contém. Você pode adicionar um título usando plt dot title () e adicionar rótulos xey usando as funções plt dot xlabel () e plt dot ylabel (), respectivamente. Também giramos os xticks, neste caso, os rótulos de data, em 45 graus para aumentar a legibilidade. Finalmente, não se esqueça de incluir uma chamada para plt dot show () para exibir o gráfico.
+
+4. Gráfico de usuários diários
+Como você pode ver, enquanto a primeira metade do mês mantém em torno de 300 usuários por dia, há um grande pico no meio do mês. Isso pode ser porque enviamos um grande e-mail de marketing, que atingiu muitos usuários que não são visitantes diários do site. Esses são os tipos de flutuações que queremos conhecer antes de nos aprofundarmos e calcularmos as métricas.
+
+5. Vamos praticar!
+Agora é sua vez de analisar esses dados.
