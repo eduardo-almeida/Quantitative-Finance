@@ -1,26 +1,55 @@
+0
+00:00:03,000 --> 00:00:12,000
 Agora que você importou o conjunto de dados de marketing e está familiarizado com ele, vamos fazer algumas análises exploratórias iniciais.
 
+1
+00:00:12,000 --> 00:00:23,000
 Para começar, vamos ter uma ideia de quantos usuários exclusivos veem nossos ativos de marketing a cada dia. Podemos usar o método groupby () no DataFrame de marketing.
 
+2
+00:00:23,000 --> 00:00:29,000
  Para agrupar por data, passamos 'date_served' como o argumento para groupby ().
 
+3
+00:00:29,000 --> 00:00:38,000
  Em seguida, selecionamos a coluna user_id fora de groupby () e usamos o método nunique () para contar o número de usuários únicos a cada dia.
 
+4
+00:00:38,000 --> 00:00:43,000
  Parece que cerca de 300 usuários veem nossos anúncios por dia.
 
+5
+00:00:43,000 --> 00:00:50,000
 Como você viu no slide anterior, não é fácil interpretar os resultados quando eles são impressos em uma tabela.
 
+6
+00:00:50,000 --> 00:00:59,000
  É muito mais fácil notar as flutuações em nossas métricas quando as representamos. Primeiro importamos matplotlib dot pyplot como plt.
 
+7
+00:00:59,000 --> 00:01:10,000
  Em seguida, plotamos a série daily_users. É uma boa prática sempre adicionar títulos e rótulos ao gráfico para transmitir claramente as informações que o gráfico contém.
 
+8
+00:01:10,000 --> 00:01:21,000
  Você pode adicionar um título usando plt dot title () e adicionar rótulos xey usando as funções plt dot xlabel () e plt dot ylabel (), respectivamente.
 
+9
+00:01:21,000 --> 00:01:27,000
  Também giramos os xticks, neste caso, os rótulos de data, em 45 graus para aumentar a legibilidade.
 
+10
+00:01:27,000 --> 00:01:34,000
  Finalmente, não se esqueça de incluir uma chamada para plt dot show () para exibir o gráfico.
 
+11
+00:01:34,000 --> 00:01:42,000
 Como você pode ver, enquanto a primeira metade do mês mantém em torno de 300 usuários por dia, há um grande pico no meio do mês.
 
+12
+00:01:42,000 --> 00:01:51,000
  Isso pode ser porque enviamos um grande e-mail de marketing, que atingiu muitos usuários que não são visitantes diários do site.
 
+13
+00:01:51,000 --> 00:02:01,000
+  Esses são os tipos de flutuações que queremos conhecer antes de nos aprofundarmos e calcularmos as métricas.Agora é sua vez de analisar esses dados.
